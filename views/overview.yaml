@@ -3,10 +3,56 @@ title: Home
 badges:
   - entity: person.keagan
 cards:
-  - type: 'custom:button-card'
-    color: var(-primary-text-color)
-    icon: mdi:chair-rolling
-    tap_action:
-      action: navigate
-      navigation_path: ../lovelace/office
-    
+
+  - type: vertical-stack
+    cards:
+      - type: 'custom:button-card'
+        color: var(-primary-text-color)
+        icon: mdi:chair-rolling
+        tap_action:
+          action: navigate
+          navigation_path: ../lovelace/office
+
+      - type: weather-forecast
+        entity: weather.openweathermap
+
+      - type: grid
+        columns: 3
+        cards:
+
+    # Grid row 1
+
+          - type: grid
+            columns: 2
+            cards:
+              - type: markdown
+                content: >
+                  a
+              - type: markdown
+                content: >
+                  b
+              - type: markdown
+                content: >
+                  a1
+              - type: markdown
+                content: >
+                  b2
+          - type: markdown
+            content: c
+          - type: grid
+            columns: 2
+            cards:
+              - type: markdown
+                content: >
+                  d
+              - type: markdown
+                content: >
+                  e
+              - type: markdown
+                content: >
+                  d2
+              - type: markdown
+                content: >
+                  e2
+
+    # Grid row 2

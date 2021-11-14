@@ -2,74 +2,76 @@ title: Office
 path: office
 badges: []
 cards:
-  - entity: light.office_lights_group
-    name: Office Lights
-    type: custom:button-card
-    template: group-overview-button
-    aspect_ratio: 4/1
-    icon: mdi:chair-rolling
-    custom_fields:
-      power_icon:
-        card:
-          entity: light.office_lights_group
-          template: power-button
-          type: 'custom:button-card'
-      slider:
-        card:
-          entity: light.office_lights_group
-          full_row: true
-          togle: false
-          type: custom:slider-entity-row
-  - type: grid
-    columns: 2
+  - type: vertical-stack
     cards:
-      - custom_fields:
-          extra_button:
-            card:
-              entity: light.porch
-              template: info-button
-              type: 'custom:button-card'
-          slider:
-            card:
-              entity: light.porch
-              full_row: true
-              toggle: false
-              type: 'custom:slider-entity-row'
-        entity: light.porch
-        template: hue-style-light-button
-        name: Ceiling
-        type: 'custom:button-card'
-      - custom_fields:
-          extra_button:
-            card:
-              entity: light.office_lamp
-              template: info-button
-              type: 'custom:button-card'
-          slider:
-            card:
-              entity: light.office_lamp
-              full_row: true
-              toggle: false
-              type: 'custom:slider-entity-row'
-        entity: light.office_lamp
-        name: Lamp
-        template: hue-style-light-button
-        type: 'custom:button-card'
-      - custom_fields:
-          extra_button:
-            card:
-              entity: switch.test
-              template: info-button
-              type: 'custom:button-card'
-        entity: switch.test
-        name: Test TP Link
-        icon: mdi:desk-lamp
-        template: switch-button
-        type: 'custom:button-card'
-      - type: 'custom:button-card'
-        color_type: blank-card
-      - type: grid
-        columns: 4
-        cards:
-          - template: view_back_button
+    - entity: light.office_lights_group
+      name: Office Lights
+      type: custom:button-card
+      template: group-overview-button
+      aspect_ratio: 4/1
+      icon: mdi:chair-rolling
+      custom_fields:
+        power_icon:
+          card:
+            entity: light.office_lights_group
+            template: power-button
             type: 'custom:button-card'
+        slider:
+          card:
+            entity: light.office_lights_group
+            full_row: true
+            togle: false
+            type: custom:slider-entity-row
+    - type: grid
+      columns: 2
+      cards:
+        - custom_fields:
+            extra_button:
+              card:
+                entity: light.office_ceiling
+                template: info-button
+                type: 'custom:button-card'
+            slider:
+              card:
+                entity: light.office_ceiling
+                full_row: true
+                toggle: false
+                type: 'custom:slider-entity-row'
+          entity: light.office_ceiling
+          template: hue-style-light-button
+          name: Ceiling
+          type: 'custom:button-card'
+        - custom_fields:
+            extra_button:
+              card:
+                entity: light.office_lamp
+                template: info-button
+                type: 'custom:button-card'
+            slider:
+              card:
+                entity: light.office_lamp
+                full_row: true
+                toggle: false
+                type: 'custom:slider-entity-row'
+          entity: light.office_lamp
+          name: Lamp
+          template: hue-style-light-button
+          type: 'custom:button-card'
+        - custom_fields:
+            extra_button:
+              card:
+                entity: switch.test
+                template: info-button
+                type: 'custom:button-card'
+          entity: switch.test
+          name: Test TP Link
+          icon: mdi:desk-lamp
+          template: switch-button
+          type: 'custom:button-card'
+        - type: 'custom:button-card'
+          color_type: blank-card
+    - type: grid
+      columns: 4
+      cards:
+        - template: view_back_button
+          type: 'custom:button-card'
