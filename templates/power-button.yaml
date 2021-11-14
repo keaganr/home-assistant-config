@@ -25,3 +25,5 @@ styles:
   card:
     - width: 45px
     - height: 45px
+tap_action:
+  action: more-info

@@ -19,18 +19,18 @@ state:
       state:
         - color: var(--primary-text-color)
       icon:
-        - color: white
+        - color: '#F4E98C'
     value: 'on'
 styles:
   card: null
   custom_fields:
-    power_icon:
+    extra_button:
       - justify-self: right
       - padding-right: 10%
     slider:
       - margin-right: 3%
   grid:
-    - grid-template-areas: '"n power_icon" "i ." "s ." "l ." "slider slider"'
+    - grid-template-areas: '"n extra_button" "i ." "s ." "l ." "slider slider"'
     - grid-template-columns: 60% 40%
     - grid-template-rows: auto 160px auto auto
   icon:
@@ -48,4 +48,4 @@ styles:
     - margin-left: 10%
     - padding: 0% 0% 5% 0%
 tap_action:
-  action: more-info
+  action: toggle
