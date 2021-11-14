@@ -13,11 +13,16 @@ scene: !include scenes.yaml
 # Light Groups
 light:
   - platform: group
+    name: all_lights
+    entities:
+      - light.office_lamp
+      - light.office_ceiling
+  - platform: group
     name: office_lights_group
     unique_id: office_lights_group 
     entities:
       - light.office_lamp
-      - light.porch
+      - light.office_ceiling
 
 lovelace:
   mode: yaml
@@ -25,4 +30,6 @@ lovelace:
     - url: /hacsfiles/button-card/button-card.js
       type: module
     - url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js
+      type: module
+    - url: /hacsfiles/simple-weather-card/simple-weather-card-bundle.js
       type: module

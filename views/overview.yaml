@@ -6,53 +6,57 @@ cards:
 
   - type: vertical-stack
     cards:
-      - type: 'custom:button-card'
-        color: var(-primary-text-color)
-        icon: mdi:chair-rolling
-        tap_action:
-          action: navigate
-          navigation_path: ../lovelace/office
 
-      - type: weather-forecast
-        entity: weather.openweathermap
+# Top Layer
 
       - type: grid
-        columns: 3
+        columns: 4
         cards:
-
-    # Grid row 1
-
-          - type: grid
-            columns: 2
-            cards:
-              - type: markdown
-                content: >
-                  a
-              - type: markdown
-                content: >
-                  b
-              - type: markdown
-                content: >
-                  a1
-              - type: markdown
-                content: >
-                  b2
+          - entity: light.all_lights
+            state:
+              - icon: 'mdi:lightbulb-off'
+                id: id_off
+              - icon: 'mdi:lightbulb-on'
+                id: id_on
+            template: quick_toggle_btn
+            type: 'custom:button-card'
+          - type: markdown
+            content: b
           - type: markdown
             content: c
-          - type: grid
-            columns: 2
-            cards:
-              - type: markdown
-                content: >
-                  d
-              - type: markdown
-                content: >
-                  e
-              - type: markdown
-                content: >
-                  d2
-              - type: markdown
-                content: >
-                  e2
+          - type: markdown
+            content: d
 
-    # Grid row 2
+
+      - backdrop:
+          night: '#36383d'
+        entity: weather.openweathermap
+        name: ' '
+        styles: null
+        type: 'custom:simple-weather-card'
+
+      - type: grid
+        columns: 2
+        cards:
+
+    # Grid row 1 
+
+    # 4x4 small squares
+    
+          - type: 'custom:button-card'
+            entity: light.office_lights_group
+            custom_fields:
+              s2: '&nbsp'
+            hold_action:
+              action: navigate
+              navigation_path: ../lovelace/office
+            tap_action:
+              action: navigate
+              navigation_path: ../lovelace/office
+            icon: mdi:chair-rolling
+            name: Office
+            template:
+              - standard_btn_layout
+              - standard_btn_states
+              - standard_btn_states_on
+              - light_btn

@@ -1,0 +1,17 @@
+state:
+  - styles:
+      card:
+        - background-color: '#DFDFDF'
+      custom_fields:
+        s2:
+          - color: Grey
+      label:
+        - color: Grey
+        - font-size: 11pt
+      name:
+        - color: '#171717'
+      state:
+        - color: Grey
+      icon:
+        - color: '#5F9BEA'
+    value: 'on'
