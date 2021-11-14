@@ -24,10 +24,10 @@ cards:
     columns: 2
     cards:
       - custom_fields:
-          power_icon:
+          extra_button:
             card:
               entity: light.porch
-              template: power-button
+              template: info-button
               type: 'custom:button-card'
           slider:
             card:
@@ -40,10 +40,10 @@ cards:
         name: Ceiling
         type: 'custom:button-card'
       - custom_fields:
-          power_icon:
+          extra_button:
             card:
               entity: light.office_lamp
-              template: power-button
+              template: info-button
               type: 'custom:button-card'
           slider:
             card:
