@@ -2,6 +2,8 @@ group-overview-button: !include /config/templates/group-overview-button.yaml
 hue-style-light-button: !include /config/templates/hue-style-light-button.yaml
 light-button: !include /config/templates/light-button.yaml
 power-button: !include /config/templates/power-button.yaml
+switch-button: !include /config/templates/switch-button.yaml
+
 view_back_button:
   color: var(-primary-text-color)
   icon: 'mdi:arrow-left-circle'

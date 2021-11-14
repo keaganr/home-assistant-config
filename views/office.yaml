@@ -58,18 +58,13 @@ cards:
       - custom_fields:
           power_icon:
             card:
-              entity: light.office_lamp
+              entity: switch.test
               template: power-button
               type: 'custom:button-card'
-          slider:
-            card:
-              entity: light.office_lamp
-              full_row: true
-              toggle: false
-              type: 'custom:slider-entity-row'
-        entity: light.office_lamp
-        name: Lamp
-        template: hue-style-light-button
+        entity: switch.test
+        name: Test TP Link
+        icon: mdi:desk-lamp
+        template: switch-button
         type: 'custom:button-card'
       - type: 'custom:button-card'
         color_type: blank-card
