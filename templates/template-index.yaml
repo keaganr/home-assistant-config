@@ -1,50 +1,10 @@
-header_red:
-  styles:
-    card:
-      - background-color: "#00FF00"
-button_style_wide_overview:
-  aspect_ratio: 4/1
-  label: |
-    [[[
-      var bri = states['light.office'].attributes.brightness;
-      return '' + (bri ? bri : '0') + '%';
-    ]]]
-  show_label: false
-  show_state: true
-  state:
-    - styles:
-        card: null
-        icon:
-          - filter: grayscale(100%)
-      value: 'off'
-    - styles:
-        card: null
-        label:
-          - color: Grey
-        name:
-          - color: var(--primary-text-color)
-        state:
-          - color: var(--primary-text-color)
-      value: 'on'
-  styles:
-    card: null
-    custom_fields:
-      power_icon:
-        - justify-self: center
-        - margin-left: 3%
-      slider:
-        - margin-right: 3%
-        - margin-top: 3%
-    grid:
-      - grid-template-areas: '"i n power_icon" "i s power_icon" "slider slider slider"'
-      - grid-template-columns: 0.25fr 0.6fr 0.2fr
-      - grid-template-rows: auto auto
-    icon:
-      - justify-self: start
-      - padding-right: 20%
-    name:
-      - justify-self: start
-    state:
-      - justify-self: start
+group-overview-button: !include /config/templates/group-overview-button.yaml
+hue-style-light-button: !include /config/templates/hue-style-light-button.yaml
+light-button: !include /config/templates/light-button.yaml
+power-button: !include /config/templates/power-button.yaml
+view_back_button:
+  color: var(-primary-text-color)
+  icon: 'mdi:arrow-left-circle'
   tap_action:
-    action: more-info
+    action: navigate
+    navigation_path: ../lovelace/main

@@ -3,37 +3,10 @@ title: Home
 badges:
   - entity: person.keagan
 cards:
-  - type: light
-    entity: light.office_lamp
-  - type: light
-    entity: light.porch
-  - type: entities
-    entities:
-      - person.keagan
-  - type: entities
-    entities:
-      - binary_sensor.rpi_power_status
-      - binary_sensor.updater
-    title: Binary sensor
-  - type: entities
-    entities:
-      - entity: sensor.plex_keagan_s_desktop_v2
-  - type: custom:button-card
-    entity: light.office_lamp
+  - type: 'custom:button-card'
+    color: var(-primary-text-color)
     icon: mdi:chair-rolling
-    custom_fields:
-      abc:
-        card:
-          full_row: true
-          hide_state: false
-          type: custom:button-card
-          entity: light.office_2
-      slider:
-        card:
-          full_row: true
-          hide_state: false
-          type: custom:slider-entity-row
-          entity: light.office_lamp
-    color: rgb(28, 128, 199)
     tap_action:
-      action: more-info
+      action: navigate
+      navigation_path: ../lovelace/office
+    

@@ -1,0 +1,54 @@
+aspect_ratio: 1/1.25
+color: auto
+label: |
+  [[[
+    var bri = states['light.office'].attributes.brightness;
+    return '' + (bri ? bri : '0') + '%';
+  ]]]
+show_label: false
+show_state: true
+show_last_changed: true
+state:
+  - styles:
+      card: null
+      icon:
+        - filter: grayscale(100%)
+    value: 'off'
+  - styles:
+      card: null
+      label:
+        - color: Grey
+      name:
+        - color: var(--primary-text-color)
+      state:
+        - color: var(--primary-text-color)
+    value: 'on'
+styles:
+  card: null
+  custom_fields:
+    power_icon:
+      - justify-self: right
+      - padding-right: 10%
+    slider:
+      - margin-right: 3%
+  grid:
+    - grid-template-areas: '"n power_icon" "icon_hue ." "s ." "l ." "slider slider"'
+    - grid-template-columns: 60% 40%
+    - grid-template-rows: auto auto auto auto
+  icon:
+    - justify-self: start
+    - padding-right: 50px
+  name:
+    - justify-self: start
+    - margin-left: 10%
+    - padding: 10% 0% 10% 0%
+  state:
+    - justify-self: start
+    - margin-left: 10%
+    - padding: 10% 0% 5% 0%
+  label:
+    - justify-self: start
+    - margin-left: 10%
+    - padding: 0% 0% 5% 0%
+tap_action:
+  action: more-info
