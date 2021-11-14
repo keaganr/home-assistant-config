@@ -10,6 +10,15 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 
+# Light Groups
+light:
+  - platform: group
+    name: office_lights_group
+    unique_id: office_lights_group 
+    entities:
+      - light.office_lamp
+      - light.porch
+
 lovelace:
   mode: yaml
   resources:

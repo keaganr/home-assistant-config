@@ -1,0 +1,17 @@
+title: Office
+path: office
+badges: []
+cards:
+  - entity: light.office_lights_group
+    name: Office Lights
+    type: custom:button-card
+    template: button_style_wide_overview
+    aspect_ratio: 4/1
+    icon: mdi:chair-rolling
+    custom_fields:
+      slider:
+        card:
+          entity: light.office_lights_group
+          full_row: true
+          togle: false
+          type: custom:slider-entity-row
