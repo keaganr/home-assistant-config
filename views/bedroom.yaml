@@ -1,0 +1,46 @@
+title: Bedroom
+path: bedroom
+icon: mdi:bed
+badges: []
+cards:
+  - type: vertical-stack
+    cards:
+    - entity: light.bedroom_lights_group
+      name: Bedroom Lights
+      type: custom:button-card
+      template: group-overview-button
+      aspect_ratio: 4/1
+      icon: mdi:bed
+      custom_fields:
+        power_icon:
+          card:
+            entity: light.bedroom_lights_group
+            template: power-button
+            type: 'custom:button-card'
+        slider:
+          card:
+            entity: light.bedroom_lights_group
+            full_row: true
+            togle: false
+            type: custom:slider-entity-row
+    - type: grid
+      columns: 2
+      cards:
+        - type: 'custom:button-card'
+          template: switch-button
+          entity: switch.bedroom_light
+          icon: mdi:floor-lamp
+          custom_fields:
+            extra_button:
+              card:
+                entity: switch.bedroom_light
+                template: info-button
+                type: 'custom:button-card'
+                name: Bedroom Light
+        - type: 'custom:button-card'
+          color_type: blank-card
+    - type: grid
+      columns: 4
+      cards:
+        - template: view_back_button
+          type: 'custom:button-card'

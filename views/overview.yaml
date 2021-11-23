@@ -21,34 +21,6 @@ cards:
               - icon: 'mdi:lightbulb-on'
                 id: id_on
             template: quick_toggle_btn
-          - type: gauge
-            min: 0
-            max: 100
-            entity: sensor.cpu_usage
-            name: CPU
-            severity:
-              green: 0
-              yellow: 30
-              red: 70
-          - type: gauge
-            entity: sensor.memory_usage_mb
-            min: 0
-            max: 926
-            name: RAM
-            severity:
-              green: 0
-              yellow: 300
-              red: 600
-            unit: MB
-          - type: gauge
-            min: 0
-            max: 200
-            severity:
-              green: 0
-              yellow: 122
-              red: 176
-            entity: sensor.cpu_temperature
-            name: Temp
 
       - backdrop:
           night: '#36383d'
@@ -75,6 +47,24 @@ cards:
               navigation_path: ../lovelace/office
             icon: mdi:chair-rolling
             name: Office
+            template:
+              - standard_btn_layout
+              - standard_btn_states
+              - standard_btn_states_on
+              - light_btn
+
+          - type: 'custom:button-card'
+            entity: light.bedroom_lights_group
+            custom_fields:
+              s2: '&nbsp'
+            hold_action:
+              action: navigate
+              navigation_path: ../lovelace/bedroom
+            tap_action:
+              action: navigate
+              navigation_path: ../lovelace/bedroom
+            icon: mdi:bed
+            name: Bedroom
             template:
               - standard_btn_layout
               - standard_btn_states

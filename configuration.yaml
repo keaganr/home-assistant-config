@@ -37,12 +37,22 @@ light:
     entities:
       - light.office_lamp
       - light.office_ceiling
+      - light.bedroom_light
   - platform: group
     name: office_lights_group
     unique_id: office_lights_group 
     entities:
       - light.office_lamp
       - light.office_ceiling
+  - platform: group
+    name: bedroom_lights_group
+    entities:
+      - light.bedroom_light 
+
+  # Translate switches to lights
+  - platform: switch
+    name: Bedroom Light
+    entity_id: switch.bedroom_light
 
 lovelace:
   mode: yaml
