@@ -5,7 +5,11 @@ show_state: true
 state_display: |
   [[[ 
     var bri = Math.round(entity.attributes.brightness / 2.55);
-    if (entity.state == "on") return "Lights on at " + bri + "%";
+    if (entity.state == "on") {
+      if (isNaN(bri)) return "Lights are on";
+      return "Lights on at " + bri + "%";
+
+    }
     if (entity.state == "Unavailable") return "Lights are Unavailable";
     else return "Lights are off" 
   ]]]
