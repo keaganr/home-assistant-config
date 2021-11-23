@@ -1,5 +1,6 @@
 title: Office
 path: office
+icon: mdi:chair-rolling
 badges: []
 cards:
   - type: vertical-stack
@@ -57,17 +58,39 @@ cards:
           name: Lamp
           template: hue-style-light-button
           type: 'custom:button-card'
-        - custom_fields:
+        - type: 'custom:button-card'
+          template: switch-button
+          entity: switch.bedroom_light
+          icon: mdi:desk-lamp
+          custom_fields:
             extra_button:
               card:
-                entity: switch.test
+                entity: switch.bedroom_light
                 template: info-button
                 type: 'custom:button-card'
-          entity: switch.test
-          name: Test TP Link
-          icon: mdi:desk-lamp
+                name: Bedroom Light
+        - type: 'custom:button-card'
           template: switch-button
-          type: 'custom:button-card'
+          entity: switch.sliding_door_light
+          icon: mdi:desk-lamp
+          custom_fields:
+            extra_button:
+              card:
+                entity: switch.sliding_door_light
+                template: info-button
+                type: 'custom:button-card'
+                name: Sliding Door Light
+        - type: 'custom:button-card'
+          template: switch-button
+          entity: switch.tv_light
+          icon: mdi:desk-lamp
+          custom_fields:
+            extra_button:
+              card:
+                entity: switch.tv_light
+                template: info-button
+                type: 'custom:button-card'
+                name: TV Light
         - type: 'custom:button-card'
           color_type: blank-card
     - type: grid

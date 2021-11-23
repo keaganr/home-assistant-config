@@ -1,5 +1,6 @@
 path: default_view
 title: Home
+icon: mdi:home
 badges:
   - entity: person.keagan
 cards:
@@ -12,21 +13,42 @@ cards:
       - type: grid
         columns: 4
         cards:
-          - entity: light.all_lights
+          - type: 'custom:button-card'
+            entity: light.all_lights
             state:
               - icon: 'mdi:lightbulb-off'
                 id: id_off
               - icon: 'mdi:lightbulb-on'
                 id: id_on
             template: quick_toggle_btn
-            type: 'custom:button-card'
-          - type: markdown
-            content: b
-          - type: markdown
-            content: c
-          - type: markdown
-            content: d
-
+          - type: gauge
+            min: 0
+            max: 100
+            entity: sensor.cpu_usage
+            name: CPU
+            severity:
+              green: 0
+              yellow: 30
+              red: 70
+          - type: gauge
+            entity: sensor.memory_usage_mb
+            min: 0
+            max: 926
+            name: RAM
+            severity:
+              green: 0
+              yellow: 300
+              red: 600
+            unit: MB
+          - type: gauge
+            min: 0
+            max: 200
+            severity:
+              green: 0
+              yellow: 122
+              red: 176
+            entity: sensor.cpu_temperature
+            name: Temp
 
       - backdrop:
           night: '#36383d'
@@ -39,9 +61,7 @@ cards:
         columns: 2
         cards:
 
-    # Grid row 1 
-
-    # 4x4 small squares
+# Grid row 1 
     
           - type: 'custom:button-card'
             entity: light.office_lights_group
