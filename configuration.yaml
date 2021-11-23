@@ -38,6 +38,8 @@ light:
       - light.office_lamp
       - light.office_ceiling
       - light.bedroom_light
+      - light.tv_light
+      - light.sliding_door_light
   - platform: group
     name: office_lights_group
     unique_id: office_lights_group 
@@ -48,11 +50,22 @@ light:
     name: bedroom_lights_group
     entities:
       - light.bedroom_light 
+  - platform: group
+    name: living_room_lights_group
+    entities:
+      - light.tv_light
+      - light.sliding_door_light
 
   # Translate switches to lights
   - platform: switch
     name: Bedroom Light
     entity_id: switch.bedroom_light
+  - platform: switch
+    name: TV Light
+    entity_id: switch.tv_light
+  - platform: switch
+    name: Sliding Door Light
+    entity_id: switch.sliding_door_light
 
 lovelace:
   mode: yaml

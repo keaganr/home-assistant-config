@@ -70,3 +70,23 @@ cards:
               - standard_btn_states
               - standard_btn_states_on
               - light_btn
+
+# Grid row 2
+
+          - type: 'custom:button-card'
+            entity: light.living_room_lights_group
+            custom_fields:
+              s2: '&nbsp'
+            hold_action:
+              action: navigate
+              navigation_path: ../lovelace/living_room
+            tap_action:
+              action: navigate
+              navigation_path: ../lovelace/living_room
+            icon: mdi:sofa
+            name: Living Room
+            template:
+              - standard_btn_layout
+              - standard_btn_states
+              - standard_btn_states_on
+              - light_btn

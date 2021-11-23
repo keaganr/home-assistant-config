@@ -5,3 +5,4 @@ views:
   - !include /config/views/overview.yaml
   - !include /config/views/office.yaml
   - !include /config/views/bedroom.yaml
+  - !include /config/views/living_room.yaml

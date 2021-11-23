@@ -1,25 +1,25 @@
-title: Bedroom
-path: bedroom
-icon: mdi:bed
+title: Living Room
+path: living_room
+icon: mdi:sofa
 badges: []
 cards:
   - type: vertical-stack
     cards:
-    - entity: light.bedroom_lights_group
-      name: Bedroom Lights
+    - entity: light.living_room_lights_group
+      name: Living Room Lights
       type: custom:button-card
       template: group-overview-button
       aspect_ratio: 4/1
-      icon: mdi:bed
+      icon: mdi:sofa
       custom_fields:
         power_icon:
           card:
-            entity: light.bedroom_lights_group
+            entity: light.living_room_lights_group
             template: power-button
             type: 'custom:button-card'
         slider:
           card:
-            entity: light.bedroom_lights_group
+            entity: light.living_room_lights_group
             full_row: true
             togle: false
             type: custom:slider-entity-row
@@ -28,28 +28,26 @@ cards:
       cards:
         - type: 'custom:button-card'
           template: switch-button
-          entity: switch.bedroom_light
+          entity: switch.sliding_door_light
+          icon: mdi:string-lights
+          custom_fields:
+            extra_button:
+              card:
+                entity: switch.sliding_door_light
+                template: info-button
+                type: 'custom:button-card'
+                name: Sliding Door Light
+        - type: 'custom:button-card'
+          template: switch-button
+          entity: switch.tv_light
           icon: mdi:floor-lamp
           custom_fields:
             extra_button:
               card:
-                entity: switch.bedroom_light
+                entity: switch.tv_light
                 template: info-button
                 type: 'custom:button-card'
-                name: Bedroom Light
-        - type: 'custom:button-card'
-          template: switch-button
-          entity: switch.bedroom_air_cleaner
-          icon: mdi:air-purifier
-          custom_fields:
-            extra_button:
-              card:
-                entity: switch.bedroom_air_cleaner
-                template: info-button
-                type: 'custom:button-card'
-                name: Air Purifier
-        # - type: 'custom:button-card'
-        #   color_type: blank-card
+                name: TV Light
     - type: grid
       columns: 4
       cards:
